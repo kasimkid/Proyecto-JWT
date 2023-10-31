@@ -13,10 +13,15 @@ export const Home = () => {
 			<p>
 				<img src={rigoImageUrl} />
 			</p>
-			<p className=" text-center fw-bold">
-                    <Link to={"/registro"} className= "btn btn-primary">Create Account</Link>
-                </p>
-			<div className="alert alert-info">
+			<div>
+				<p className=" text-center fw-bold">
+					<Link to={"/registro"} className="btn btn-primary">Create Account</Link>
+				</p>
+				<p className=" text-center fw-bold">
+					<Link to={"/login"} className="btn btn-primary">Login</Link>
+				</p>
+			</div>
+			{/* <div className="alert alert-info">
 				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
 			</div>
 			<p>
@@ -24,7 +29,7 @@ export const Home = () => {
 				<a href="https://start.4geeksacademy.com/starters/react-flask">
 					Read documentation
 				</a>
-			</p>
+			</p> */}
 		</div>
 	);
 };
