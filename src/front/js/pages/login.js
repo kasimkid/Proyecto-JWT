@@ -86,7 +86,7 @@ export const Login = () => {
             </div>
             <div className="">
                 <p className=" text-center fw-bold">
-                    <Link to={"/"} className="btn btn-primary mt-3">Home Page</Link>
+                    <Link to={"/"} className="btn btn-danger mt-3">Back Home</Link>
                 </p>
             </div>
         </>

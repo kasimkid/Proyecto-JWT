@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 export const NewAccount = () => {
     const { actions } = useContext(Context)
-
+    const navigate = useNavigate();
 
     const [log, setLog] = useState({
         email: "",
@@ -21,17 +21,19 @@ export const NewAccount = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await actions.createAccount(log)
+        navigate("/Login")
 
         setLog({
             email: "",
             password: ""
         });
+
     }
 
     return (
         <>
             <h3 className="text-center display-4">Register</h3>
-            <div className="container d-flex justify-content-center">
+            <div className="container border border-4 box shadow-2 p-4 d-flex justify-content-center">
                 <div className="  w-50 border border-4 shadow rounded p-4 mt-2">
                     <form onSubmit={handleSubmit}>
                         <div className="">
@@ -52,7 +54,7 @@ export const NewAccount = () => {
                             </div>
                         </div>
                         <div className="">
-                            <label htmlFor="password" className="form-control-label">
+                            <label htmlFor="password" className="form-control-label mt-2">
                                 Contraseña
                             </label>
                             <div>
@@ -68,19 +70,20 @@ export const NewAccount = () => {
                                 />
                             </div>
                         </div>
-                        <div className="d-flex justify-content-center mt-3">
-                            <button type="submit" className="btn btn-primary my-2 col-">
-                                Crear
-                            </button>
+                        <div className=" d-flex justify-content-around mt-3">
+                            <div>
+                                <button type="submit" className="btn btn-primary my-2 col-">
+                                    Crear
+                                </button>
+                            </div>
+                            <div className="">
+                                <p className="fw-bold">
+                                    <Link to={"/"} className="btn btn-danger mt-2">Back</Link>
+                                </p>
+                            </div>
                         </div>
                     </form>
                 </div>
-
-            </div>
-            <div className="">
-                <p className=" text-center fw-bold">
-                    <Link to={"/login"}>Log In</Link>
-                </p>
             </div>
         </>
 

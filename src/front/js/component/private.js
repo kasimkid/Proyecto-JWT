@@ -16,7 +16,7 @@ export const Private = () => {
             <h1>Private Page</h1>
 
             <p>
-                <button onClick={handleLogOut}>Log Out</button>
+                <button className="btn btn-danger" onClick={handleLogOut}>Log Out</button>
             </p>
         </>
     );
